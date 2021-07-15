@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="text-center mw-500 m-auto">
+        <div class="m-5">
+            <h4>{{ target_user.username }}</h4>
+        </div>
+        <div>
+            {{ target_user.date_joined }}
+        </div>
+    </div>
+
+
+{% endblock %}
