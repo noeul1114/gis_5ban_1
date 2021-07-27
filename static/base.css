@@ -17,5 +17,12 @@
     padding: 1rem 1.5rem;
 }
 
+.profile_image {
+    height: 12rem;
+    width: 12rem;
+    border-radius: 20rem;
+    object-fit: cover;
+}
+
 
 

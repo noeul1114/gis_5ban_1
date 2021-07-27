@@ -4,7 +4,19 @@
 
     <div class="text-center mw-500 m-auto">
         <div class="m-5">
-            <h4>{{ target_user.username }}</h4>
+            {% if target_user.profile %}
+                <img src="{{ target_user.profile.image.url }}"
+                     class="profile_image"
+                     alt="profile image">
+                <h4>{{ target_user.profile.nickname }}</h4>
+                <h5>{{ target_user.profile.message }}</h5>
+            {% else %}
+            <h4>
+                <a href="{% url 'profileapp:create' %}">
+                    Create Profile
+                </a>
+            </h4>
+            {% endif %}
         </div>
         <div>
             {{ target_user.date_joined }}
