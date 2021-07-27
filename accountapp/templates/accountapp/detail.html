@@ -6,16 +6,16 @@
         <div class="m-5">
             {% if target_user.profile %}
                 <img src="{{ target_user.profile.image.url }}"
-                     class="profile_image"
+                     class="profile_image m-4"
                      alt="profile image">
-                <h4>{{ target_user.profile.nickname }}</h4>
+                <h2 class="NNS_B">{{ target_user.profile.nickname }}</h2>
                 <h5>{{ target_user.profile.message }}</h5>
             {% else %}
-            <h4>
+            <h2>
                 <a href="{% url 'profileapp:create' %}">
                     Create Profile
                 </a>
-            </h4>
+            </h2>
             {% endif %}
         </div>
         <div>
