@@ -28,5 +28,18 @@
     font-family: "NanumSquareB", cursive;
 }
 
+.round_button {
+    color: black;
+    text-decoration: none;
+    box-shadow: 0 0 3px black;
+    border-radius: 10rem;
+    padding: .3rem;
+}
+
+.round_button:hover {
+    color: dimgrey;
+}
+
+
 
 
