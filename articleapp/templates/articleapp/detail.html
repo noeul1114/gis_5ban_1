@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+    <div class="container">
+        <div>
+            {#      제목, 글쓴이, 작성일      #}
+            <h1>{{ target_article.title }}</h1>
+            <h3>{{ target_article.writer.profile.nickname }}</h3>
+            <p>{{ target_article.created_at }}</p>
+        </div>
+        <div>
+            {#      게시글 대표이미지, 글내용      #}
+            <img src="{{ target_article.image.url }}" alt="">
+            {{ target_article.content }}
+        </div>
+    </div>
+
+
+{% endblock %}
