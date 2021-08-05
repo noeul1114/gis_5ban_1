@@ -11,6 +11,7 @@
           justify-content: center;
           align-items: center;
           border-radius: 1rem;
+            flex-direction: column;
         }
 
         .container img {
@@ -22,45 +23,18 @@
 
 
     <div class="container my-4">
-      <div class="item1">
-          <img src="https://picsum.photos/200/300" alt="">
-      </div>
-      <div class="item2">
-          <img src="https://picsum.photos/200/333" alt="">
-      </div>
-      <div class="item3">
-          <img src="https://picsum.photos/200/455" alt="">
-      </div>
-      <div class="item4">
-          <img src="https://picsum.photos/200/500" alt="">
-      </div>
-      <div class="item5">
-          <img src="https://picsum.photos/200/250" alt="">
-      </div>
-      <div class="item6">
-          <img src="https://picsum.photos/200/200" alt="">
-      </div>
-      <div class="item7">
-          <img src="https://picsum.photos/200/322" alt="">
-      </div>
-      <div class="item8">
-          <img src="https://picsum.photos/200/333" alt="">
-      </div>
-      <div class="item9">
-          <img src="https://picsum.photos/200/300" alt="">
-      </div>
-      <div class="item10">
-          <img src="https://picsum.photos/200/300" alt="">
-      </div>
-      <div class="item11">
-          <img src="https://picsum.photos/200/300" alt="">
-      </div>
-      <div class="item12">
-          <img src="https://picsum.photos/200/300" alt="">
-      </div>
-      <div class="item13">
-          <img src="https://picsum.photos/200/300" alt="">
-      </div>
+
+        {% for article in article_list %}
+
+            <div>
+                <a href="{% url 'articleapp:detail' pk=article.pk %}">
+                    <img src="{{ article.image.url }}"
+                         alt="">
+                </a>
+            </div>
+
+        {% endfor %}
+
     </div>
 
     <script src="{% static 'js/magicgrid.js' %}"></script>
