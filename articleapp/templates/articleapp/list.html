@@ -6,7 +6,7 @@
     <style>
         .container div {
           width: 280px;
-          background-color: antiquewhite;
+            box-shadow: 0 0 .5rem grey;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -31,6 +31,7 @@
                     <img src="{{ article.image.url }}"
                          alt="">
                 </a>
+                <span class="m-2 NNS_B">{{ article.title }}</span>
             </div>
 
         {% endfor %}
@@ -39,5 +40,20 @@
 
     <script src="{% static 'js/magicgrid.js' %}"></script>
 
+    <div class="text-center my-5">
+        <a href="{% url 'articleapp:create' %}"
+           class="btn btn-dark rounded-pill material-icons">
+            brush
+        </a>
+        <a href="{% url 'articleapp:create' %}"
+           class="btn btn-outline-dark rounded-pill px-5">
+            Create Article
+        </a>
+    </div>
+
 
 {% endblock %}
+
+
+
+
