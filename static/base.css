@@ -52,5 +52,12 @@
     margin: 2rem;
 }
 
-
+.comment_box {
+    text-align: left;
+    border: solid;
+    border-color: #bebebe;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1rem;
+}
 
