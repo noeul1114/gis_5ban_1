@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="text-center mw-500 m-auto">
+        <div class="m-5">
+            <img src="{{ target_project.image.url }}"
+                 class="profile_image m-4"
+                 alt="profile image">
+            <h2 class="NNS_B">
+                {{ target_project.name }}
+            </h2>
+            <h5>{{ target_project.description }}</h5>
+        </div>
+    </div>
+
+
+{% endblock %}
