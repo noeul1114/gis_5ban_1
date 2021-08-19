@@ -10,7 +10,6 @@
         }
 
         .container div {
-            box-shadow: 0 0 .5rem grey;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -37,7 +36,7 @@
                     <img src="{{ project.image.url }}"
                          alt="">
                 </a>
-                <span class="m-2 NNS_B">{{ project.name }}</span>
+                <span class="m-2 NNS_B">{{ project.name | truncatechars:10 }}</span>
             </div>
 
         {% endfor %}
