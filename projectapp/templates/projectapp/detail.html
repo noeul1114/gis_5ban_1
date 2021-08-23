@@ -14,6 +14,13 @@
         </div>
     </div>
 
+    <div class="text-center">
+        <a href="{% url 'subscribeapp:subscribe' project_pk=target_project.pk %}"
+           class="btn btn-primary rounded-pill px-5">
+            Subscribe
+        </a>
+    </div>
+
     <div>
         {% include 'snippets/list_fragment.html' with article_list=object_list %}
     </div>
