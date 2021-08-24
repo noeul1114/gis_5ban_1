@@ -8,6 +8,15 @@
         <div class="my-5">
             {#      제목, 글쓴이, 작성일      #}
             <h1 class="NNS_B">{{ target_article.title }}</h1>
+            <div>
+                <a href="{% url 'likeapp:article_like' article_pk=target_article.pk %}"
+                   class="material-icons">
+                    favorite
+                </a>
+                <span>
+                    {{ target_article.like }}
+                </span>
+            </div>
             <h3>{{ target_article.writer.profile.nickname }}</h3>
             <p>{{ target_article.created_at }}</p>
         </div>
