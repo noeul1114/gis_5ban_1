@@ -14,11 +14,13 @@
                 Projects
             </a>
         </span>
+        {% if user.is_authenticated %}
         <span>
             <a href="{% url 'subscribeapp:list' %}">
                 Subscription
             </a>
         </span>
+        {% endif %}
 
         {% if not user.is_authenticated  %}
         <span>
