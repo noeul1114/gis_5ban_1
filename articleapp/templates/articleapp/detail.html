@@ -30,7 +30,7 @@
                  class="article_image"
                  alt="">
             <div class="article_content">
-                {{ target_article.content }}
+                {{ target_article.content | safe }}
             </div>
             {% if target_article.writer == user %}
             <div>
