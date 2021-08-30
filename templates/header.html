@@ -1,21 +1,25 @@
 <div style="text-align: center">
 
     <div class="pragmatic_header_logo">
-        <h1>Pragmatic</h1>
+        <h1>
+            <a href="{% url 'home' %}">
+                Pragmatic
+            </a>
+        </h1>
     </div>
     <div class="pragmatic_header_button">
-        <span>
+        <span class="mx-2">
             <a href="{% url 'articleapp:list' %}">
                 Articles
             </a>
         </span>
-        <span>
+        <span class="mx-2">
             <a href="{% url 'projectapp:list' %}">
                 Projects
             </a>
         </span>
         {% if user.is_authenticated %}
-        <span>
+        <span class="mx-2">
             <a href="{% url 'subscribeapp:list' %}">
                 Subscription
             </a>
@@ -23,23 +27,23 @@
         {% endif %}
 
         {% if not user.is_authenticated  %}
-        <span>
+        <span class="mx-2">
             <a href="{% url 'accountapp:login' %}">
                 Login
             </a>
         </span>
-        <span>
+        <span class="mx-2">
             <a href="{% url 'accountapp:create' %}">
                 SignUp
             </a>
         </span>
         {% else %}
-        <span>
+        <span class="mx-2">
             <a href="{% url 'accountapp:detail' pk=user.pk %}">
                 Mypage
             </a>
         </span>
-        <span>
+        <span class="mx-2">
             <a href="{% url 'accountapp:logout' %}">
                 Logout
             </a>
