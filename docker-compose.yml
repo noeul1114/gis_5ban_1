@@ -1,7 +1,36 @@
 version: "3.7"
 
 services:
-  django:
-    image: gis_5ban_django:1
+
+  nginx:
+    image: nginx:1.19.5
     ports:
-    - 8080:8000
+      - 80:80
+    networks:
+      - gis_5ban_network
+    volumes:
+      - /home/ubuntu/nginx.conf:/etc/nginx/nginx.conf
+      - gis_5ban_static:/data/static/
+      - gis_5ban_media:/data/media/
+
+  django:
+    image: gis_5ban_django:3
+    networks:
+      - gis_5ban_network
+    volumes:
+      - gis_5ban_static:/home/gis_5ban_1/staticfiles/
+      - gis_5ban_media:/home/gis_5ban_1/media/
+
+
+networks:
+  gis_5ban_network:
+
+volumes:
+  gis_5ban_static:
+  gis_5ban_media:
+
+
+
+
+
+
