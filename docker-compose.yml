@@ -12,6 +12,7 @@ services:
       - /home/ubuntu/nginx.conf:/etc/nginx/nginx.conf
       - gis_5ban_static:/data/static/
       - gis_5ban_media:/data/media/
+      - gis_log:/var/log/nginx/
 
   django:
     image: gis_5ban_django:5
@@ -49,6 +50,7 @@ volumes:
   gis_5ban_static:
   gis_5ban_media:
   gis_mariadb:
+  gis_log:
 
 secrets:
   DJANGO_SECRET_KEY:
